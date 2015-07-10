@@ -22,6 +22,9 @@ meteor tutorial
     // read
     db.posts.find(); // produces JSON: {title: "new post", _id: 'xxx'}
 
+    // update
+    db.posts.update({"_id": "xHufBgLcAZJmNnoRf"}, {"title": "changed"}, { upsert: true });
+
 ### Init new collection
 
     // new posts collection
@@ -79,6 +82,9 @@ In the view we can simply call the records using handlebars.
             {{/each}}
         </div>
     </template>
+
+## Routes
+
 
 ## Access from meteor.com
 
