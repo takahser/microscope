@@ -60,6 +60,26 @@ Fixtures should be stored in the /server folder, because we need this code do be
             url: 'http://themeteorbook.com'
     }); }
 
+Next, we need the view to actually get the db data. We initialize the posts collection in the helpers function.
+
+    // file: /client/views/post_list.js
+    Template.postsList.helpers({
+        posts: function() {
+            return Posts.find();
+        }
+    });
+
+In the view we can simply call the records using handlebars.
+
+    // file: /client/views/post_list.html
+    <template name="postsList">
+        <div class="posts">
+            {{#each posts}}
+                {{> postItem}}
+            {{/each}}
+        </div>
+    </template>
+
 ## Access from meteor.com
 
     // access mongoDB
