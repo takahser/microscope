@@ -1,8 +1,9 @@
 <template name="postItem">
     <div class="post">
         <div class="post-content">
-            <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span> <a href="post/{{_id}}">View</a></h3>
-            <p><i>{{author}}</i></p>
-        </div>
+            <h3><a href="{{url}}">{{title}}</a><span>{{domain}}</span></h3>
+            </div>
+            <a href="{{pathFor route='post.show'}}" class="discuss btn">Discuss</a>
+
     </div>
 </template>
