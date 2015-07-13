@@ -8,7 +8,7 @@ meteor tutorial
     - Server: reading & writing changes to/from MongoDb
     - Client: secure copy of subset of real, canonical collection, stored in browser memory (cache), keeping up to date with server --> data already pre-loaded & can be accessed very quickly
 
-### collections on mongoDb
+### collections on mongoDb (server)
 
     // clear db (delete everything)
     meteor reset
@@ -25,6 +25,17 @@ meteor tutorial
     // update
     db.posts.update({"_id": "xHufBgLcAZJmNnoRf"}, {"title": "changed"}, { upsert: true });
 
+### collections on MiniMongo (client)
+
+	// get cursor for posts collection (synchronous => if db chagnes, UI will be updated)
+	Posts.find();
+	
+	// get records from cursor in an array => UI won't be updated when db changes
+	Posts.find().fetch();
+
+	// get number of posts
+	Posts.find().count();
+	
 ### Init new collection
 
     // new posts collection

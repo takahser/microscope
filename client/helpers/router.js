@@ -12,6 +12,6 @@ Router.map(function() {
     this.route('/post/:_id', function () {
       var item = Posts.findOne({_id: this.params._id});
       //var item = Posts.findOne('xHufBgLcAZJmNnoRf');
-      this.render('postItem', {data: item});
+      this.render('postPage', {data: item});
     });
 });
