@@ -85,6 +85,29 @@ In the view we can simply call the records using handlebars.
 
 ## Routes
 
+For this project the routes are configured on the client side [iron:router](https://github.com/iron-meteor/iron-router).
+
+	// Configure master templates
+	Router.configure({
+	  loadingTemplate: 'loading',
+	  notFoundTemplate: 'notFound',
+	  layoutTemplate: 'layout'
+	});
+
+	// Map routes
+	Router.map(function() {
+		
+		// simple route
+		// '/' => views/postsList.html
+		this.route('postsList',{path:'/'});
+		
+		// route with url parameter route
+		// '/post/1' to views/postItem, id=1
+		this.route('/post/:_id', function () {
+			var item = Posts.findOne({_id: this.params._id});
+			this.render('postItem', {data: item});
+		});
+	});
 
 ## Access from meteor.com
 
