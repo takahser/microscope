@@ -128,6 +128,13 @@ For this project the routes are configured on the client side [iron:router](http
     // access logs
     meteor logs myApp:w
 
+## Authentication
+
+install predefined packages by meteor
+
+    meteor add accounts-ui
+    meteor add accounts-password
+
 ## Glossary
 
 - MiniMongo -> Meteors client side MongoDB implementation, not all MongoDB features are available

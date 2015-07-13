@@ -1,12 +1,8 @@
 <template name="layout">
     <div class="container">
-        <header class="navbar">
-            <div class="navbar-inner">
-                <a class="brand">Microscope</a>
-            </div>
-        </header>
+        {{>header}}
         <div id="main" class="row-fluid">
-           <div>{{>yield}}</div>
-        </div> 
+            {{>yield}}
+        </div>
     </div>
 </template>
